@@ -1,0 +1,61 @@
+body {
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+.container {
+	position: relative;
+	width: min(80vw, 40rem);
+	aspect-ratio: 1 / 0.915;
+}
+
+.envelope {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+.envelope.open {
+	cursor: default;
+}
+
+/* Temporary styling for the letter */
+.letter {
+	display: none;
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 85%;
+}
+
+.letter.open {
+	display: block;
+}
+
+.email-form {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.email-form input,
+.email-form button {
+	padding: 8px 12px;
+	font-size: 14px;
+}
+
+.email-form button {
+	background: #2c5aa0;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
