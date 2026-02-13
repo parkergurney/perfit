@@ -22,11 +22,17 @@ form.addEventListener('submit', (e) => {
   const input = form.querySelector('input[type="email"]');
   if (input.value) {
     console.log('Submitted:', input.value);
-    letter.classList.remove('open');
     letterClip.classList.remove('open');
-    envelope.classList.remove('open');
-    envelopeScene.classList.remove('letter-open');
-    envelope.src = 'images/envelop-closed.webp';
-    input.value = '';
+    letter.classList.add('closing');
+    letter.classList.remove('open');
+
+    const slideDuration = 400;
+    setTimeout(() => {
+      letter.classList.remove('closing');
+      envelope.classList.remove('open');
+      envelope.src = 'images/envelop-closed.webp';
+      envelopeScene.classList.remove('letter-open');
+      input.value = '';
+    }, slideDuration + 600);
   }
 });

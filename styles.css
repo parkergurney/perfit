@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
 body {
 	font-family: 'Cormorant Infant', serif;
@@ -72,6 +73,7 @@ h1 {
 }
 .envelope-overlay {
   z-index: 3;
+  pointer-events: none;
   display: none;
 }
 .envelope.open ~ .envelope-overlay {
@@ -91,7 +93,7 @@ h1 {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 30rem;
+	height: 32rem;
 	overflow: hidden;
 	pointer-events: none;
 }
@@ -110,39 +112,67 @@ h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 2rem;
+  padding: 1rem;
+	padding-left: 2rem;
+	padding-right: 2rem;	
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   transition: transform 0.4s ease-out;
+	color: #5F0E2E;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 300;
+	font-style: normal;
 }
-/* Letter visible when envelope is opened (on click) */
 .envelope-scene.letter-open .letter {
   visibility: visible;
 }
-/* Letter moves up 600ms after envelope clicked */
 .letter.open {
 	transform: translate(-50%, 0%);
 }
+.letter.closing {
+	transform: translate(-50%, 30%);
+}
 /* Email form Temporary styling */
+.letter h3{
+	margin: 0;
+	font-size: 1.7rem;
+	line-height: 1.7rem;
+	text-transform: uppercase;
+}
+
 .email-form {
   position: relative;
   z-index: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 1rem;
 }
 .email-form input,
 .email-form button {
-	padding: 8px 12px;
-	font-size: 14px;
+	font-family: 'Roboto Mono', monospace;
+	padding: 0.3rem 1rem;
+	font-size: 1rem;
+	border-radius: 0;
+}
+
+.email-form input {
+	outline: none;
+	border: none;
+	background: #A4738830;
+}
+.email-form input::placeholder {
+	color: #876C77;
+	text-transform: uppercase;
 }
 .email-form button {
-	background: #2c5aa0;
+	background: #5F0E2E;
 	color: white;
 	border: none;
 	cursor: pointer;
+	width: 7rem;
+	text-transform: uppercase;
 }
 /* footer */
-p {
+.footer {
 	color: #FFDDED;
 	margin-top: 2rem;
 	font-size: 1.3rem;
