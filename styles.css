@@ -24,7 +24,7 @@ header {
 	align-items: center;
 	justify-content: flex-end;
 	width: 100%;
-	height: clamp(10rem, 10vw, 50rem);
+	height: clamp(5rem, 10vw, 50rem);
 	padding-bottom: 2rem;
 	transition: opacity 0.4s ease-out;
 }
@@ -38,8 +38,8 @@ header img {
 	object-fit: cover;
 }
 h1 {
-	font-size: 3rem;
-	line-height: 4rem;
+	font-size: clamp(2rem, 2.5vw, 3rem);
+	line-height: clamp(2rem, 2.5vw, 4rem);
 	color: white;
 	margin: 0;
 }
